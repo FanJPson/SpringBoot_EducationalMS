@@ -9,111 +9,87 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 引入bootstrap -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<!-- 引入JQuery  bootstrap.js-->
-	<script src="/js/jquery-3.2.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- 顶栏 -->
 	<jsp:include page="top.jsp"></jsp:include>
 	<!-- 中间主体 -->
-		<div class="container" id="content">
+	<div class="container" id="content">
 		<div class="row">
 			<jsp:include page="menu.jsp"></jsp:include>
 			<div class="col-md-10">
-				<div class="panel panel-default">
-				    <div class="panel-heading">
-						<div class="row">
-					    	<h1 style="text-align: center;">修改课程信息</h1>
-						</div>
-				    </div>
-				    <div class="panel-body">
-						<form class="form-horizontal" role="form" action="/admin/editCourse" id="editfrom" method="post">
-							  <div class="form-group">
-							    <label for="inputEmail3" class="col-sm-2 control-label">课程号</label>
-							    <div class="col-sm-10">
-							      <input readonly="readonly"  type="number" class="form-control" id="inputEmail3" value="${course.courseid}" name="courseid" placeholder="请输入课程号">
-							    </div>
-							  </div>
-							  <div class="form-group">
-							    <label for="inputPassword3" class="col-sm-2 control-label">课程名称</label>
-									<div class="col-sm-10">
-							      <input type="text" class="form-control" id="inputPassword3" name="coursename" value="${course.coursename}" placeholder="请输入课程名称">
-							    </div>
-							  </div>
-							  <div class="form-group">
-								  <label for="inputPassword3" class="col-sm-2 control-label" name="grade">授课老师编号</label>
-								  <div class="col-sm-10">
-									  <select class="form-control" name="teacherid" id="teacherid">
-										  <c:forEach items="${teacherList}" var="item">
-											  <option value="${item.userid}">${item.username}</option>
-										  </c:forEach>
-									  </select>
-								  </div>
-							  </div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">上课时间</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="coursetime" value="${course.coursetime}" placeholder="请输入上课时间">
-								</div>
+				<div class="card mt-5">
+					<div class="card-body">
+						<h2 class="card-title text-center">修改课程信息</h2>
+						<form class="mt-2" action="/admin/editCourse" id="editfrom" method="post">
+							<div class="mb-3 form-floating">
+								<input readonly="readonly" type="number" class="form-control" id="inputEmail3" value="${course.courseid}" name="courseid" placeholder="请输入课程号">
+								<label for="inputEmail3" class="form-label">课程号</label>
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">上课地点</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="classroom" value="${course.classroom}" placeholder="上课地点">
-								</div>
+							<div class="mb-3 form-floating">
+								<input type="text" class="form-control" id="inputPassword3" name="coursename" placeholder="请输入课程名称"
+									   value="${course.coursename}">
+								<label for="inputPassword3" class="form-label">课程名称</label>
 							</div>
-							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">周数</label>
-								<div class="col-sm-10">
-									<input type="number" class="form-control" name="courseweek" value="${course.courseweek}" placeholder="请输入周数">
-								</div>
+							<div class="mb-3 form-floating">
+								<select class="form-select" name="teacherid" id="teacherid">
+									<c:forEach items="${teacherList}" var="item">
+										<option value="${item.userid}">${item.username}</option>
+									</c:forEach>
+								</select>
+								<label for="teacherid" class="form-label">授课老师工号</label>
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label" name="coursetype">课程的类型：</label>
-								<div class="col-sm-10">
-									<select class="form-control" name="coursetype" id="coursetype">
-										<option value="必修课">必修课</option>
-										<option value="选修课">选修课</option>
-										<option value="公共课">公共课</option>
-									</select>
-								</div>
+							<div class="mb-3 form-floating">
+								<input type="text" class="form-control" id="time1" placeholder="请输入上课时间"
+									   value="${course.coursetime}" name="coursetime">
+								<label for="time1" class="form-label">上课时间</label>
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label" name="grade">所属院系</label>
-								<div class="col-sm-10">
-									<select class="form-control" name="collegeid">
-										<c:forEach items="${collegeList}" var="item">
-											<option value="${item.collegeid}">${item.collegename}</option>
-										</c:forEach>
-									</select>
-								</div>
+							<div class="mb-3 form-floating">
+								<input type="text" class="form-control" id="dd2" placeholder="上课地点"
+									   value="${course.classroom}" name="classroom">
+								<label for="dd2" class="form-label">上课地点</label>
 							</div>
-							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">学分：</label>
-								<div class="col-sm-10">
-									<input type="number" class="form-control" name="score" value="${course.score}" placeholder="请输入学分">
-								</div>
+							<div class="mb-3 form-floating">
+								<input type="number" class="form-control" id="time2" placeholder="请输入周数"
+									   value="${course.courseweek}" name="courseweek">
+								<label for="time2" class="form-label">周数</label>
 							</div>
-							<div class="form-group" style="text-align: center">
-								<button class="btn btn-default" type="submit">提交</button>
-								<button class="btn btn-default" type="reset">重置</button>
-								<button class="btn btn-default" onclick="history.back(-1)" type="reset">返回</button>
+							<div class="mb-3 form-floating">
+								<select class="form-select" id="kc3" name="coursetype">
+									<option value="必修课">必修课</option>
+									<option value="选修课">选修课</option>
+									<option value="公共课">公共课</option>
+								</select>
+								<label for="kc3">课程类型</label>
+							</div>
+							<div class="mb-3 form-floating">
+								<select class="form-select" id="floatingSelect" name="collegeid">
+									<c:forEach items="${collegeList}" var="item">
+										<option value="${item.collegeid}">${item.collegename}</option>
+									</c:forEach>
+								</select>
+								<label for="floatingSelect">所属院系</label>
+							</div>
+							<div class="mb-3 form-floating">
+								<input type="number" class="form-control" id="score" placeholder="请输入学分"
+									   value="${course.score}" name="score">
+								<label for="score" class="form-label">学分</label>
+							</div>
+							<div class="mb-3 text-center">
+								<button class="btn btn-primary" type="submit">提交</button>
+								<button class="btn btn-secondary" type="reset">重置</button>
+								<button class="btn btn-success" onclick="history.back(-1)" type="reset">返回</button>
 							</div>
 						</form>
-				    </div>
-				    
+					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
-	<div class="container" id="footer">
-	<div class="row">
-		<div class="col-md-12"></div>
-	</div>
-	</div>
 </body>
+<!-- 引入JQuery  bootstrap.js-->
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$("#nav li:nth-child(1)").addClass("active")
 

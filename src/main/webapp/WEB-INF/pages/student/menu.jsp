@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="col-md-2">
-    <ul class="nav nav-pills nav-stacked" id="nav">
-        <li><a href="/student/showCourse">所有课程<span class="badge pull-right"></span></a></li>
-        <li><a href="/student/selectedCourse">已选课程<span class="badge pull-right"></span></a></li>
-        <li><a href="/student/overCourse">已修课程<span class="badge pull-right"></span></a></li>
-        <li><a href="/student/passwordRest">修改密码<sapn class="glyphicon glyphicon-pencil pull-right" /></a></li>
-        <li><a onclick="logoutConfirmd()">退出系统<sapn class="glyphicon glyphicon-log-out pull-right" /></a></li>
+    <ul class="list-group text-center list-group-flush">
+        <a href="/student/showCourse" class="list-group-item list-group-item-action">所有课程</a>
+        <a href="/student/selectedCourse" class="list-group-item list-group-item-action">已选课程</a>
+        <a href="/student/overCourse" class="list-group-item list-group-item-action">已修课程</a>
+        <a href="/student/passwordRest" class="list-group-item list-group-item-action">修改密码</a>
+        <a onclick="logoutConfirmd()" class="list-group-item list-group-item-action">退出系统</a>
     </ul>
 
     <script>

@@ -4,7 +4,7 @@
 
 <!--teacherMapper-->
 
-<mapper namespace="com.liujiajun.mapper.TeacherMapperCustom">
+<mapper namespace="com.baiyun.test.mapper.TeacherMapperCustom">
     <select id="findByPaging"  resultType="TeacherCustom">
         select teacher.*, college.collegeName
         from teacher, college

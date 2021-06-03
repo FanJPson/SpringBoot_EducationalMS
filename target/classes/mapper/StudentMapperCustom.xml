@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.liujiajun.mapper.StudentMapperCustom">
+<mapper namespace="com.baiyun.test.mapper.StudentMapperCustom">
 
 
-    <resultMap id="BaseResultMap" type="com.liujiajun.po.Student" >
+    <resultMap id="BaseResultMap" type="com.baiyun.test.po.Student" >
         <id column="userID" property="userid" jdbcType="INTEGER" />
         <result column="userName" property="username" jdbcType="VARCHAR" />
         <result column="sex" property="sex" jdbcType="VARCHAR" />
