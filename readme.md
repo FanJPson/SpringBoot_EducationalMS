@@ -20,8 +20,7 @@ ORM框架：Mybatis
 前端框架：Bootstrap
 
 
-# 在线预览
-[http://23188i98c9.51mypc.cn:28070](http://23188i98c9.51mypc.cn:28070)
+# 预览
 * 登录账户
   * 管理员账户：admin
   * 老师账户：1001
